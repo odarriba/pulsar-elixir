@@ -374,7 +374,7 @@ defmodule Pulsar.Reader do
 
   defp wait_for_consumers_ready(consumer_group_pid, reader_ref) do
     expected_count = count_consumers(consumer_group_pid)
-    collect_ready_messages(expected_count, [], 5_000, reader_ref)
+    collect_ready_messages(expected_count, [], 60_000, reader_ref)
   end
 
   defp count_consumers(consumer_group_pid) do
